@@ -11,7 +11,7 @@ const auth = (req, res, next) => {
             });
         }
 
-        const decode = jwt.verify(token, "jwtexample");
+        const decode = jwt.verify(token, process.env.jwt_secret_key);
 
         req.user = decode.id;
 
